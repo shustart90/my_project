@@ -2,16 +2,15 @@ class ProductsList{
     constructor(container = '#catalog'){
         this.container = container;
         this.goods = [];
-        this._fetchProducts();
+        this._fetchProducts()
+        	.then(data => {
+        	this.goods = [...data];
+        	this.render();
+        	})
     } 
 	_fetchProducts(){
-	        this.goods = [
-	        {id: 1, title: 'Гарри Поттер', price: 1000},
-            {id: 2, title: 'Хоббит', price: 200},
-            {id: 3, title: 'Властелин Колец', price: 400},
-            {id: 4, title: 'Ведьмак', price: 2050},
-            {id: 5, title: 'Библия', price: 50},
-            {id: 6, title: 'Зеленая Миля', price: 850},];
+	        return fetch("database.json")
+	        	.then(result => result.json());
     } 
     render() {
         const block = document.querySelector(this.container);
@@ -52,27 +51,4 @@ class ProductItem{
 }
 
 let list = new ProductsList();
-list.render();
 
-class BusketList {
-	constructor (container = '#busket'){
-		this.container = container;
-	}
-	SumInBusket() {
-
-	}
-	render() {
-
-	}
-}
-
-class BusketItem {
-	constructor {
-
-	}
-	render() {
-
-	}
-}
-
-console.log(list.productsSum ());
