@@ -1,39 +1,78 @@
-function makeProduct (name, price, id) { //конструктор для создания продуктов
-			this.name = name;
-			this.price = price;
-			this.id = id;
+class ProductsList{
+    constructor(container = '#catalog'){
+        this.container = container;
+        this.goods = [];
+        this._fetchProducts();
+    } 
+	_fetchProducts(){
+	        this.goods = [
+	        {id: 1, title: 'Гарри Поттер', price: 1000},
+            {id: 2, title: 'Хоббит', price: 200},
+            {id: 3, title: 'Властелин Колец', price: 400},
+            {id: 4, title: 'Ведьмак', price: 2050},
+            {id: 5, title: 'Библия', price: 50},
+            {id: 6, title: 'Зеленая Миля', price: 850},];
+    } 
+    render() {
+        const block = document.querySelector(this.container);
+        for(let product of this.goods){
+            const productObj = new ProductItem(product);
+            block.insertAdjacentHTML('beforeend',productObj.render())
+        }
+    }
+    productsSum () {
+    	let goodsSum = 0;
+    	for(let product of this.goods){
+            const productObj = new ProductItem(product);
+            goodsSum += productObj.price;
+        }
+        return goodsSum;
+    }
+    
+}
+
+
+class ProductItem{
+	constructor(product, img = 'https://placehold.it/200x150'){
+		this.title = product.title;
+		this.price = product.price;
+		this.id = product.id;
+		this.img = img;
+		
 	}
-let harryPotter = new makeProduct ("Гарри Поттер", 1000, 1);
-let hobbit = new makeProduct ("Хоббит", 800, 2);
-let lotr = new makeProduct ("Властелин Колец", 2400, 3);
-let witcher = new makeProduct ("Ведьмак", 400, 4);
-let bible = new makeProduct ("Библия", 60, 5);
-let greenMile = new makeProduct ("Зеленая Миля", 999, 6);
-let products = [harryPotter, hobbit, lotr, witcher, bible, greenMile]; 
-const renderProduct = (name, price, id) => {
-    return `<div class="product-item" id="item_${id}">
-    			<img src="img/small/${id}.jpg" alt="">
-                <h3 class="product-name">${name}</h3>
-                <p class="product-price">${price} руб.</p>
-                <button class="buy-btn" id="add-${id}">Добавить в корзину</button>
+	
+	render(){
+		 return `<div class="product-item" id="item-${this.id}">
+    			<img src="img/small/${this.id}.jpg" alt="">
+                <h3 class="product-name">${this.title}</h3>
+                <p class="product-price">${this.price} руб.</p>
+                <button class="buy-btn" id="add-${this.id}">Добавить в корзину</button>
             </div>`
-};
-const renderPage = list => {
-    const productsList = list.map(item => renderProduct(item.name, item.price, item.id));
-    //document.querySelector('#catalog').innerHTML = productsList;
-    productsList.forEach(item => document.querySelector('#catalog').innerHTML += item);
-};
-renderPage(products);
-let busket = document.createElement("div");
-busket.id = "min-busket";
-let busketMoney = document.createElement("div");
-busketMoney.innerText = "Корзина пуста";
-let bodyCont = document.querySelector("body");
-let butToBuskForm = document.createElement("form");
-let butToBusk = document.createElement("button");
-butToBuskForm.action = "busket.html";
-butToBusk.innerText = "Перейти в корзину";
-butToBuskForm.appendChild(butToBusk);
-busket.appendChild(busketMoney);
-busket.appendChild(butToBuskForm);
-bodyCont.appendChild(busket);
+	}
+}
+
+let list = new ProductsList();
+list.render();
+
+class BusketList {
+	constructor (container = '#busket'){
+		this.container = container;
+	}
+	SumInBusket() {
+
+	}
+	render() {
+
+	}
+}
+
+class BusketItem {
+	constructor {
+
+	}
+	render() {
+
+	}
+}
+
+console.log(list.productsSum ());
