@@ -1,32 +1,38 @@
 [
 	{
-		"id": 1,
-		"title": "Гарри Поттер",
-		"price": 1000
+		"id_product": 1,
+		"product_name": "Гарри Поттер",
+		"price": 1000,
+		"img_url":" https://cdn-kaspi.kz/medias/sys_master/images/images/h00/h22/13923566321694/xrouling-dz-garri-potter-i-proklatoe-dita-c-1-i-2-finalnaa-versia-scenaria-26014406-1.jpg.pagespeed.ic.ehNEgYqFiv.jpg"
 	},
 	{
-		"id": 2,
-		"title": "Хоббит",
-		"price": 500
+		"id_product": 2,
+		"product_name": "Хоббит",
+		"price": 500,
+		"img_url": "https://www.figurspel.se/product_images/35210-1-S.jpg"
 	},
 	{
-		"id": 3,
-		"title": "Властелин Колец",
-		"price": 800
+		"id_product": 3,
+		"product_name": "Властелин Колец",
+		"price": 800,
+		"img_url": "https://www.figurspel.se/product_images/34056-1-S.jpg"
 	},
 	{
-		"id": 4,
-		"title": "Ведьмак",
-		"price": 700
+		"id_product": 4,
+		"product_name": "Ведьмак",
+		"price": 700,
+		"img_url": "http://ukr-kniga.kiev.ua/images/45661_69859_k-200x150.jpg"
 	},
 	{
-		"id": 5,
-		"title": "Библия",
-		"price": 20
+		"id_product": 5,
+		"product_name": "Библия",
+		"price": 20,
+		"img_url": "http://collectionpng.com/preview/645.jpg"
 	},
 	{
-		"id": 6,
-		"title": "Зеленая миля",
-		"price": 1400
+		"id_product": 6,
+		"product_name": "Зеленая миля",
+		"price": 1400,
+		"img_url": "https://cdn-kaspi.kz/medias/sys_master/images/images/h70/h39/10392215814174/king-s-zelenaa-mila-26020694-1.jpg"
 	}
 ]

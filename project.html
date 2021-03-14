@@ -8,20 +8,20 @@
 	<title>Document</title>
 </head>
 <body>
-	<nav class="top-menu">
-	  <ul class="menu-main">
-	    <li><a href="" class="current">Books</a></li>
-	    <li><a href="">Busket</a></li>
-	    <li><a href="">Blog</a></li>
-	    <li><a href="">Contact</a></li>
-	  </ul>
-	</nav>
+	<header>
+        <div class="logo">Books</div>
+        <div class="cart">
+            <form action="#" class="search-form">
+                <input type="text" class="search-field">
+                <button class="btn-search" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <button class="btn-cart" type="button">Корзина</button>
+            <div class="cart-block invisible"></div>
+        </div>
+    </header>
 	<div id="catalog"></div>
-	<div id="min-busket">
-		<div id="busket-money"></div>
-		<form action="busket.html">
-			<button>Перейти в корзину</button>
-		</form>
-	</div>
+	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 </body>
 </html>
